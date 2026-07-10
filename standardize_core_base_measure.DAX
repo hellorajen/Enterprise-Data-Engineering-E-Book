@@ -1,0 +1,14 @@
+Code snippet
+// Base Financial Metrics Centralized at the Model Layer
+[Total Gross Revenue CAD] := 
+SUMX(
+    'Fact_Web_Sales_Delta',
+    'Fact_Web_Sales_Delta'[Gross_Revenue_CAD]
+)
+
+[Total Revenue CAD] := 
+CALCULATE(
+    [Total Gross Revenue CAD],
+    'Dim_Compliance_Profile_Junk'[Is_Test_Transaction] = "N",
+    'Dim_Compliance_Profile_Junk'[Has_Underwriting_Approval] = "Y"
+)

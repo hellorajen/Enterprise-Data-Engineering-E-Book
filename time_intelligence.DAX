@@ -1,0 +1,15 @@
+Code snippet
+// Prior Year Revenue Comparison Measure
+[Revenue Prior Year CAD] := 
+CALCULATE(
+    [Total Revenue CAD],
+    SAMEPERIODLASTYEAR('Dim_Date'[Calendar_Date])
+)
+
+// Standardized Year-over-Year Growth Percentage Formula
+[YoY Revenue Growth Pct] := 
+DIVIDE(
+    [Total Revenue CAD] - [Revenue Prior Year CAD],
+    [Revenue Prior Year CAD],
+    0
+)

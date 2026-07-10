@@ -1,0 +1,11 @@
+YAML
+# Deployment Template Enforcing Federated Guardrails Automations
+workspace_policy:
+  environment: Regional_Business_Sandbox_US
+  max_allowed_compute_sku: Fabric_F64
+  auto_pause_minutes: 20
+  allowed_data_zones: ["Gold_Presentation_Shared"]
+  security_enforcement:
+    automated_pii_masking: true
+    microsoft_purview_binding: true
+    block_public_endpoints: true
